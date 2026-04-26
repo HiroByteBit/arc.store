@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arc.store</title>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <!-- Toast Notification Container -->
+    <div id="toast-container"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">arc<span>.</span></a>
+            <ul class="nav-links desktop-only">
+                <li><a href="#new-arrivals">New Arrivals</a></li>
+                <li><a href="#categories">Collections</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#sale">Sale</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <button class="icon-btn" id="nav-wishlist-btn" aria-label="Wishlist">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <span class="badge" id="nav-wishlist-badge">0</span>
+                </button>
+                <button class="icon-btn" id="nav-cart-btn" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span class="badge" id="nav-cart-badge">0</span>
+                </button>
+                <button class="btn-ghost desktop-only">Sign In</button>
+                <button class="icon-btn mobile-only" id="mobile-menu-btn" aria-label="Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div id="mobile-nav" class="mobile-nav-overlay">
+        <button id="close-mobile-nav" class="close-btn">&times;</button>
+        <ul class="mobile-nav-links">
+            <li><a href="#new-arrivals">New Arrivals</a></li>
+            <li><a href="#categories">Collections</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#sale">Sale</a></li>
+            <li><a href="#">Sign In</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero section-dark">
+        <div class="hero-grain"></div>
+        <div class="hero-rings"></div>
+        <div class="hero-content">
+            <div class="badge-pill new-drop-badge">
+                <span class="pulse-dot"></span> New Drop
+            </div>
+            <h1 class="hero-headline">Style that moves<br>with you.</h1>
+            <p class="hero-subheadline">Engineered for the urban environment. Premium materials, uncompromising fit, and avant-garde aesthetics.</p>
+            <div class="hero-actions">
+                <a href="#new-arrivals" class="btn-primary">Explore Collection</a>
+                <a href="#" class="btn-ghost">Watch Film &rarr;</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-num" data-target="12">0</span><span>K+</span>
+                    <span class="stat-label">Customers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" data-target="4.9" data-decimal="true">0</span><span>★</span>
+                    <span class="stat-label">Rating</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </span>
+                    <span class="stat-label">Free Global Shipping</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Marquee -->
+    <div class="marquee-container section-dark">
+        <div class="marquee-content">
+            <!-- Content duplicated in JS/CSS for infinite scroll -->
+            <span>Free Shipping Worldwide</span> <span class="dot"></span>
+            <span>30-Day Returns</span> <span class="dot"></span>
+            <span>Sustainably Made</span> <span class="dot"></span>
+            <span>New Drop Every Friday</span> <span class="dot"></span>
+            <span>Premium Materials</span> <span class="dot"></span>
+            <span>Free Shipping Worldwide</span> <span class="dot"></span>
+            <span>30-Day Returns</span> <span class="dot"></span>
+            <span>Sustainably Made</span> <span class="dot"></span>
+            <span>New Drop Every Friday</span> <span class="dot"></span>
+            <span>Premium Materials</span> <span class="dot"></span>
+        </div>
+    </div>
+
+    <!-- Featured Categories Grid -->
+    <section id="categories" class="section-light">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <a href="#" class="category-card col-span-2">
+                    <div class="category-img bg-footwear">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h5l2 3h4l2-3h5"></path><path d="M7 15v2a3 3 0 0 0 3 3h4a3 3 0 0 0 3-3v-2"></path></svg>
+                    </div>
+                    <div class="category-info">
+                        <span class="category-name">Footwear</span>
+                        <span class="category-count">24 Items</span>
+                    </div>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-img bg-outerwear">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.62 1.96v14.16a2 2 0 0 0 1.62 1.96L8 23a4 4 0 0 0 8 0l4.38-1.46a2 2 0 0 0 1.62-1.96V5.42a2 2 0 0 0-1.62-1.96z"></path></svg>
+                    </div>
+                    <div class="category-info">
+                        <span class="category-name">Outerwear</span>
+                        <span class="category-count">18 Items</span>
+                    </div>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-img bg-essentials">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.62 1.96v14.16a2 2 0 0 0 1.62 1.96L8 23a4 4 0 0 0 8 0l4.38-1.46a2 2 0 0 0 1.62-1.96V5.42a2 2 0 0 0-1.62-1.96z"></path><line x1="12" y1="2" x2="12" y2="22"></line></svg>
+                    </div>
+                    <div class="category-info">
+                        <span class="category-name">Essentials</span>
+                        <span class="category-count">42 Items</span>
+                    </div>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-img bg-accessories">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 2H8a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3z"></path><path d="M5 8h14"></path><path d="M8 2v3"></path><path d="M16 2v3"></path></svg>
+                    </div>
+                    <div class="category-info">
+                        <span class="category-name">Accessories</span>
+                        <span class="category-count">15 Items</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid: New Arrivals -->
+    <section id="new-arrivals" class="section-light">
+        <div class="container">
+            <h2 class="section-title">New Arrivals</h2>
+            <div class="filter-sort-bar">
+                <div class="filter-pills" id="product-filters">
+                    <button class="filter-pill active" data-filter="All">All</button>
+                    <button class="filter-pill" data-filter="Footwear">Footwear</button>
+                    <button class="filter-pill" data-filter="Outerwear">Outerwear</button>
+                    <button class="filter-pill" data-filter="Tops">Tops</button>
+                    <button class="filter-pill" data-filter="Accessories">Accessories</button>
+                </div>
+                <div class="custom-dropdown" id="sort-dropdown">
+                    <button class="dropdown-trigger">
+                        <span id="current-sort">Newest</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li data-value="newest" class="active">Newest</li>
+                        <li data-value="price-asc">Price: Low to High</li>
+                        <li data-value="price-desc">Price: High to Low</li>
+                        <li data-value="rating">Best Rated</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-grid" id="products-container">
+                <!-- Products injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Banner -->
+    <section id="sale" class="promo-banner section-dark">
+        <div class="container promo-content">
+            <h2 class="promo-headline">Up to 40% Off Selected Items</h2>
+            <a href="#new-arrivals" class="btn-primary">Shop Sale</a>
+        </div>
+        <div class="promo-pattern"></div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-light testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What people are saying</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="t-header">
+                        <div class="t-avatar">AL</div>
+                        <div class="t-stars">★★★★★</div>
+                    </div>
+                    <p class="t-quote">"Quality is unmatched. The 'Cloud Parka' is the heaviest, most premium piece I own."</p>
+                    <div class="t-footer">
+                        <span class="t-name">Alex L. · NY</span>
+                        <span class="t-product">Reviewed Cloud Parka</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="t-header">
+                        <div class="t-avatar">SJ</div>
+                        <div class="t-stars">★★★★★</div>
+                    </div>
+                    <p class="t-quote">"Fast shipping to London and the packaging was a whole experience on its own."</p>
+                    <div class="t-footer">
+                        <span class="t-name">Sarah J. · London</span>
+                        <span class="t-product">Reviewed Drift Low Sneaker</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="t-header">
+                        <div class="t-avatar">MK</div>
+                        <div class="t-stars">★★★★★</div>
+                    </div>
+                    <p class="t-quote">"The fit is exactly as described. Finally a brand that gets oversized proportions right."</p>
+                    <div class="t-footer">
+                        <span class="t-name">Marcus K. · Berlin</span>
+                        <span class="t-product">Reviewed Merino Crew Tee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section-dark newsletter-section">
+        <div class="container newsletter-content">
+            <h2 class="newsletter-headline">Get early access to new drops.</h2>
+            <p class="newsletter-subtext">Join the inner circle for exclusive releases and members-only pricing.</p>
+            <form id="newsletter-form" class="newsletter-form">
+                <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                <button type="submit" class="btn-primary">Join the List</button>
+            </form>
+            <p id="newsletter-success" class="newsletter-success hidden">You're in. <span class="lime-text">✓</span></p>
+            <p class="newsletter-social-proof">Join 12,400+ members</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-dark">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="#" class="nav-logo">arc<span>.</span></a>
+                <p>Style that moves with you.</p>
+                <div class="social-icons">
+                    <a href="#">IG</a>
+                    <a href="#">X</a>
+                    <a href="#">TK</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Sale</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Journal</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 arc.store.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer Overlay & Drawer -->
+    <div id="cart-overlay" class="drawer-overlay hidden"></div>
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Bag (<span id="cart-total-count">0</span>)</h3>
+            <button id="close-cart" class="close-btn">&times;</button>
+        </div>
+        <div class="cart-body" id="cart-items-container">
+            <!-- Cart items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <p id="shipping-notice" class="shipping-notice">You're $150 away from free shipping</p>
+            <div class="promo-section">
+                <input type="text" id="promo-input" placeholder="Promo Code (e.g. SAVE10)">
+                <button id="apply-promo-btn" class="btn-ghost">Apply</button>
+            </div>
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span id="cart-subtotal-price">$0.00</span>
+            </div>
+            <button class="btn-primary w-full">Checkout</button>
+            <button id="continue-shopping" class="btn-text-link">Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div class="modal-container">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <div class="modal-content">
+                <div class="modal-image-col">
+                    <div id="modal-image" class="m-img"></div>
+                </div>
+                <div class="modal-info-col">
+                    <h2 id="modal-title" class="m-title">Product Name</h2>
+                    <div class="m-rating" id="modal-rating">★★★★★ 0 reviews</div>
+                    <p class="m-price" id="modal-price">$0.00</p>
+                    <p class="m-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    
+                    <div class="m-options">
+                        <label>Size</label>
+                        <div class="size-selector" id="modal-sizes">
+                            <button class="size-pill" data-size="S">S</button>
+                            <button class="size-pill active" data-size="M">M</button>
+                            <button class="size-pill" data-size="L">L</button>
+                            <button class="size-pill" data-size="XL">XL</button>
+                        </div>
+                    </div>
+                    
+                    <div class="m-options">
+                        <label>Color</label>
+                        <div class="color-selector">
+                            <button class="color-circle bg-dark active"></button>
+                            <button class="color-circle bg-gray"></button>
+                            <button class="color-circle bg-light"></button>
+                        </div>
+                    </div>
+
+                    <div class="m-options">
+                        <label>Quantity</label>
+                        <div class="qty-stepper">
+                            <button id="modal-qty-dec">&minus;</button>
+                            <span id="modal-qty-val">1</span>
+                            <button id="modal-qty-inc">&plus;</button>
+                        </div>
+                    </div>
+
+                    <div class="m-actions">
+                        <button id="modal-add-to-cart" class="btn-primary w-full">Add to Cart</button>
+                        <button id="modal-add-to-wishlist" class="btn-ghost w-full">Add to Wishlist</button>
+                    </div>
+                    <p class="m-delivery">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                        Free delivery by Tuesday
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="search-overlay">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-wrapper">
+                    <span class="search-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </span>
+                    <input type="text" id="search-input" placeholder="Search for products, categories..." autocomplete="off">
+                    <button id="clear-search" class="clear-btn hidden">&times;</button>
+                </div>
+                <button id="close-search" class="close-btn">&times;</button>
+            </div>
+            <div class="search-content">
+                <div id="search-suggestions" class="search-suggestions">
+                    <div class="suggestion-group">
+                        <h4>Recent Searches</h4>
+                        <div id="recent-searches" class="recent-tags">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+                    <div class="suggestion-group">
+                        <h4>Trending Categories</h4>
+                        <div class="trending-tags">
+                            <span class="trending-tag">Footwear</span>
+                            <span class="trending-tag">Outerwear</span>
+                            <span class="trending-tag">New Drops</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="search-results-wrapper" class="search-results-wrapper hidden">
+                    <div class="results-header">
+                        <span id="results-count">0 products found</span>
+                    </div>
+                    <div id="search-results-grid" class="search-results-grid">
+                        <!-- Injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="scripts/app.js"></script>
+</body>
+</html>

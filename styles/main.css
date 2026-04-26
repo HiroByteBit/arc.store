@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-body);
+    line-height: 1.7;
+    color: var(--color-black);
+    background-color: var(--color-bg-light);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Base */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--font-weight-heading);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--transition-fast);
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Layout Utilities */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-3);
+}
+
+.section-dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-white);
+}
+
+.section-light {
+    background-color: var(--color-bg-light);
+    color: var(--color-black);
+    padding: var(--spacing-12) 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-6);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.w-full {
+    width: 100%;
+}
